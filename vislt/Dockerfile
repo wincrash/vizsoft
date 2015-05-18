@@ -23,6 +23,7 @@ EXPOSE 22
 EXPOSE 21000
 EXPOSE 22000
 EXPOSE 80
-
+ADD home_rpacevic.repo /etc/yum.repos.d/home_rpacevic.repo
+RUN yum -y install VisLT-osmesa
 
 CMD ["/run.sh"]

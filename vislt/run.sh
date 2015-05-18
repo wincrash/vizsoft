@@ -1,7 +1,5 @@
 #!/bin/bash
 
-wget http://download.opensuse.org/repositories/home:/rpacevic/CentOS_CentOS-6/home:rpacevic.repo -O /etc/yum.repos.d/home:rpacevic.repo
-RUN yum -y install VisLT-osmesa
 
 if [ "${AUTHORIZED_KEYS}" != "**None**" ]; then
     echo "=> Found authorized keys"
