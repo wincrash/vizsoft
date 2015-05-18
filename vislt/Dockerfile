@@ -3,7 +3,7 @@ MAINTAINER Ruslan Pacevic <rpacevic@gmail.com>
 
 RUN yum -y install openssh-server epel-release && \
     yum -y install pwgen && \
-    yum -y install rpm-build yum-utils tar wget nano mc htop which \    
+    yum -y install rpm-build yum-utils tar wget nano mc htop which \
     rm -f /etc/ssh/ssh_host_dsa_key /etc/ssh/ssh_host_rsa_key && \
     ssh-keygen -q -N "" -t dsa -f /etc/ssh/ssh_host_dsa_key && \
     ssh-keygen -q -N "" -t rsa -f /etc/ssh/ssh_host_rsa_key && \
