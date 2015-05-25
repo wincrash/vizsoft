@@ -32,7 +32,16 @@ RUN mkdir /VTK-6.2.0/build
 
 WORKDIR /VTK-6.2.0/build
 RUN cmake -DVTK_Group_Web:BOOL=ON -DVTK_WRAP_PYTHON:BOOL=ON -DVTK_Group_Imaging:BOOL=ON -DVTK_Group_MPI:BOOL=ON -DVTK_Group_Views:BOOL=ON -DVTK_OPENGL_HAS_OSMESA:BOOL=ON -DVTK_USE_X:BOOL=OFF ..
-run make install
+RUN a="$(nproc)";make  -j $a install
+ENV LD_LIBRARY_PATH=/usr/local/lib:/usr/lib64/openmpi/lib/
+
+
+RUN mkdir /work
+RUN mkdir /data
+
+VOLUME ["/data"]
+
+WORKDIR /work
 
 
 CMD ["/run.sh"]
