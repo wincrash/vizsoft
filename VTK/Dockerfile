@@ -26,8 +26,8 @@ EXPOSE 80
 
 ENV PATH=/usr/lib64/openmpi/bin:$PATH
 ADD home_rpacevic.repo /etc/yum.repos.d/home_rpacevic.repo
-ADD VTK-6.2.0.tar.gz VTK-6.2.0.tar.gz
-RUN tar xfz VTK-6.2.0.tar.gz -C /
+RUN wget http://www.vtk.org/files/release/6.2/VTK-6.2.0.tar.gz
+RUN ls -all /; tar xfz /VTK-6.2.0.tar.gz -C /
 RUN mkdir /VTK-6.2.0/build
 
 WORKDIR /VTK-6.2.0/build
