@@ -1,4 +1,4 @@
-FROM wincrash:centos7
+FROM wincrash/centos7
 MAINTAINER Ruslan Pacevic <rpacevic@gmail.com>
 
 RUN yum -y install gcc-c++ make cmake freeglut-devel python-devel libXt-devel openmpi-devel mesa-libOSMesa-devel && \
